@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Publishing = React.createClass({
+const Single = React.createClass({
   render() {
     return (
       <div className='headers'>
-          <p className='fonts'>Publishing</p>
+          <p className='fonts'>Single</p>
       </div>
     )
   }
 });
 
-export default Publishing;
+export default Single;
