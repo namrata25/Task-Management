@@ -1,5 +1,5 @@
 //create new project
-function createProject(title, description, members) {
+export function createProject(title, description, members) {
   return {
     type: 'CREATE_PROJECT',
     title,
@@ -9,7 +9,7 @@ function createProject(title, description, members) {
 }
 
 //create task
-function createTask(title, description, status) {
+export function createTask(title, description, status) {
   return {
     type: 'CREATE_TASK',
     title,
@@ -19,7 +19,7 @@ function createTask(title, description, status) {
 }
 
 //add new member
-function addMember(t, member) {
+export function addMember(t, member) {
   return {
     type: 'ADD_MEMBER',
     t,

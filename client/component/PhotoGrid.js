@@ -1,10 +1,12 @@
 import React from 'react';
+import Grid from './Grid.js';
 
 const PhotoGrid = React.createClass({
   render() {
     return (
+    
       <div className="photo-grid">
-        Hello, I'm a photgrid.
+        {this.props.projects.map((project, i) => <Grid {...this.props} key={i} project={project} i={i} />)}
       </div>
     )
   }
