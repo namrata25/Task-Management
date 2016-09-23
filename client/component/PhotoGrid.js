@@ -23,6 +23,12 @@ const PhotoGrid = React.createClass({
     const options = this.props.members.map((member) => ({"label": member.name, "value": member.name}))
     this.setState({options})
   },
+  handleSubmit() {
+    const title = this.refs.Title.value;
+    const description = this.refs.Description.value;
+    const members = this.refs.Members.value;
+    this.props.addProject(title, description, members);
+  },
   render() {
     const { multi, multiValue, options, value } = this.state;
     return (
@@ -46,16 +52,16 @@ const PhotoGrid = React.createClass({
 
                 <div className="form-group">
                   <label for="inputsm">Title</label>
-                  <input className="form-control input-sm bar-size" id="inputsm" type="text" placeholder="Title..."/>
+                  <input className="form-control input-sm task-desc" ref="Title" id="inputsm" type="text" placeholder=" Title..."/>
                 </div>
                 <div className="form-group">
                   <label for="inputlg">Description</label>
-                  <input className="form-control input-lg task-desc bar-size" id="inputlg" type="text" placeholder="Start typing..."/>
+                  <input className="form-control input-lg task-desc" ref="Description" id="inputlg" type="text" placeholder="Start typing..."/>
                 </div>
 
                 <div className="form-group">
                   <label for="inputlg">Members</label>
-                  <div className="section bar-size">
+                  <div className="section bar-size task-desc" ref="Members">
                     <Select.Creatable
                         multi={multi}
                         options={options}
@@ -67,7 +73,7 @@ const PhotoGrid = React.createClass({
               </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-default">Create</button>
+              <button type="button" className="btn btn-default" onClick={this.handleSubmit}>Create</button>
             </div>
           </div>
         </div>

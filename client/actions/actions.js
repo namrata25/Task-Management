@@ -1,7 +1,8 @@
 //create new project
-export function createProject(title, description, members) {
+export function addProject(title, description, members) {
+  console.log('In addProject action ', title, description, members);
   return {
-    type: 'CREATE_PROJECT',
+    type: 'ADD_PROJECT',
     title,
     description,
     members
