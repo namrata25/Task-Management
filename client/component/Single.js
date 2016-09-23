@@ -4,7 +4,7 @@ const Single = React.createClass({
   render() {
     return (
       <div className='headers'>
-          <p className='fonts'>Single</p>
+          <p className='fonts'>this.props.params.postId</p>
       </div>
     )
   }

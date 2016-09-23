@@ -7,7 +7,7 @@ const PhotoGrid = React.createClass({
   		return {
   			multi: true,
   			multiValue: [],
-  			options: [],
+        options: [],
   			value: undefined
   		};
   	},
@@ -19,17 +19,21 @@ const PhotoGrid = React.createClass({
 			this.setState({ value });
 		}
 	},
+  setOptions () {
+    const options = this.props.members.map((member) => ({"label": member.name, "value": member.name}))
+    this.setState({options})
+  },
   render() {
     const { multi, multiValue, options, value } = this.state;
     return (
       <div className="container photo-grid">
         {this.props.projects.map((project, i) => <Grid {...this.props} key={i} project={project} i={i} />)}
 
-        <div className="col-md-4 grid1 glyphicon glyphicon-plus-sign" data-toggle="modal" data-target="#myModal">
+        <div className="col-md-4 grid1 glyphicon glyphicon-plus-sign" data-toggle="modal" data-target="#myModal" onClick = {this.setOptions}>
           <p className="task-desc"><br/> Create New Project</p>
         </div>
 
-        <div className="modal fade" id="myModal" role="dialog">
+        <div className="modal fade modal" id="myModal" role="dialog">
           <div className="modal-dialog">
             <div className="modal-content">
 
@@ -42,21 +46,21 @@ const PhotoGrid = React.createClass({
 
                 <div className="form-group">
                   <label for="inputsm">Title</label>
-                  <input className="form-control input-sm" id="inputsm" type="text" placeholder="Title..."/>
+                  <input className="form-control input-sm bar-size" id="inputsm" type="text" placeholder="Title..."/>
                 </div>
                 <div className="form-group">
                   <label for="inputlg">Description</label>
-                  <input className="form-control input-lg task-desc" id="inputlg" type="text" placeholder="Start typing..."/>
+                  <input className="form-control input-lg task-desc bar-size" id="inputlg" type="text" placeholder="Start typing..."/>
                 </div>
 
                 <div className="form-group">
                   <label for="inputlg">Members</label>
-                  <div className="section">
+                  <div className="section bar-size">
                     <Select.Creatable
-                  				multi={multi}
-                  				options={options}
-                  				onChange={this.handleOnChange}
-                  				value={multi ? multiValue : value}
+                        multi={multi}
+                        options={options}
+                        onChange={this.handleOnChange}
+                        value={multi ? multiValue : value}
                      />
                   </div>
                 </div>
