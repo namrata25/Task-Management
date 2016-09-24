@@ -8,6 +8,9 @@ const PhotoGrid = React.createClass({
   			multi: true,
   			multiValue: [],
         options: [],
+        title: '',
+        description:'',
+        totalMembers: [],
   			value: undefined
   		};
   	},
@@ -23,14 +26,18 @@ const PhotoGrid = React.createClass({
     const options = this.props.members.map((member) => ({"label": member.name, "value": member.name}))
     this.setState({options})
   },
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     const title = this.refs.Title.value;
     const description = this.refs.Description.value;
-    const members = this.refs.Members.value;
-    this.props.addProject(title, description, members);
+    const totalMembers = this.state.multiValue.length;
+    const members = this.state.multiValue.map((member) => (member.value));
+    this.props.addProject(title, description, totalMembers);
+    this.setState({title,description, totalMembers, members});
+    getInitialState();
   },
   render() {
-    const { multi, multiValue, options, value } = this.state;
+    const { multi, multiValue, options, value, title, description } = this.state;
     return (
       <div className="container photo-grid">
         {this.props.projects.map((project, i) => <Grid {...this.props} key={i} project={project} i={i} />)}
@@ -52,28 +59,27 @@ const PhotoGrid = React.createClass({
 
                 <div className="form-group">
                   <label for="inputsm">Title</label>
-                  <input className="form-control input-sm task-desc" ref="Title" id="inputsm" type="text" placeholder=" Title..."/>
+                  <input className="form-control input-sm task-desc" ref="Title" id="inputsm" type="text" placeholder="Title..."/>
                 </div>
                 <div className="form-group">
                   <label for="inputlg">Description</label>
                   <input className="form-control input-lg task-desc" ref="Description" id="inputlg" type="text" placeholder="Start typing..."/>
                 </div>
-
-                <div className="form-group">
-                  <label for="inputlg">Members</label>
-                  <div className="section bar-size task-desc" ref="Members">
-                    <Select.Creatable
-                        multi={multi}
-                        options={options}
-                        onChange={this.handleOnChange}
-                        value={multi ? multiValue : value}
-                     />
+                  <div className="form-group">
+                    <label for="inputlg">Members</label>
+                    <div className="section bar-size task-desc">
+                      <Select.Creatable
+                          multi={multi}
+                          options={options}
+                          onChange={this.handleOnChange}
+                          value={multi ? multiValue : value}
+                       />
+                    </div>
                   </div>
                 </div>
-              </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-default" onClick={this.handleSubmit}>Create</button>
+              <button type="submit" className="btn btn-default" data-dismiss="modal" onClick={this.handleSubmit} hidden>Create</button>
             </div>
           </div>
         </div>

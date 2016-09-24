@@ -9,7 +9,7 @@ const Grid = React.createClass({
     <div className="col-md-4 grid">
       <div><p className="task-heading">{project.Title}</p></div>
       <div><p className="task-desc">{project.Description}</p></div>
-      <div><p className="task-desc"><b>{project.Members}</b></p></div>
+      <div><p className="task-desc"><b>Total Members:{project.Members}</b></p></div>
     </div>
     </Link>
     )
