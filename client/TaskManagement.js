@@ -12,10 +12,10 @@ import store, { history } from './store';
 const router = (
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}>
+      <Route path="/Task Management" component={App}>
         <IndexRoute component={PhotoGrid}></IndexRoute>
+        <Route path="/:postId" component={Single}></Route>
       </Route>
-      <Route path="/:postId" component={Single}></Route>
     </Router>
   </Provider>
 )

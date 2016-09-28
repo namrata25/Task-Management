@@ -1,13 +1,12 @@
 import React from 'react';
 import 'react-select/dist/react-select.css';
+import Header from './Header';
 
 const Task = React.createClass({
   render() {
     return (
-      <div>
-        <div className='headers'>
-          <p className='fonts'>Task Management</p>
-        </div>
+      <div>  
+        <Header />
         <div>
           {React.cloneElement(this.props.children, this.props)}
         </div>
