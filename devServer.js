@@ -2,6 +2,7 @@ var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
 var config = require('./webpack.config.dev');
+var open = require('open');
 
 var app = express();
 var compiler = webpack(config);
@@ -22,5 +23,5 @@ app.listen(7770, 'localhost', function(err) {
     console.log(err);
     return;
   }
-  console.log('Listening at http://localhost:7770');
+  open('http://localhost:7770');
 });

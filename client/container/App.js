@@ -2,13 +2,11 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 
-import Task from './Task';
+import Task from '../component/Task';
 
 function mapStateToProps(state) {
   return {
-    projects: state.projects,
-    tasks: state.tasks,
-    members: state.members
+    projects: state.projects
   }
 }
 

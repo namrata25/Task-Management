@@ -5,8 +5,10 @@ import Header from './Header';
 const Task = React.createClass({
   render() {
     return (
-      <div>  
-        <Header />
+      <div>
+        <div className='headers'>
+          <Header header='Task Management'></Header>
+        </div>
         <div>
           {React.cloneElement(this.props.children, this.props)}
         </div>
