@@ -4,7 +4,7 @@ import React from 'react';
 const NameCard =  React.createClass({
   render() {
     return(
-      <div>
+      <div className='namecard'>
           {this.props.name}
       </div>
     )
