@@ -5,7 +5,7 @@ const NameCard =  React.createClass({
   render() {
     return(
       <div>
-          {name}
+          {this.props.name}
       </div>
     )
   }

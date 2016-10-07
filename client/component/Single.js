@@ -11,7 +11,7 @@ const Single = React.createClass({
           <Header header={this.props.params.projectId}></Header>
         </div>
         <div className='single-grid'>
-          <NameCard name='Namrata GUpta' />
+          <NameCard name='Namrata Gupta' />
         </div>
       </div>
     )
