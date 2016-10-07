@@ -19,3 +19,7 @@ const Single = React.createClass({
 });
 
 export default Single;
+
+/*<div>
+  {React.cloneElement(this.props.children, this.props)}
+</div>*/
