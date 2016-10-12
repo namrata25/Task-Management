@@ -5,7 +5,6 @@ import App from './container/App';
 import AppSingle from './container/AppSingle';
 import Single from './component/Single';
 import PhotoGrid from './component/PhotoGrid';
-import SingleGrid from './component/SingleGrid';
 
 import { Router, Route, IndexRoute, browserHistory} from 'react-router';
 import { Provider } from 'react-redux';
@@ -18,7 +17,7 @@ const router = (
         <IndexRoute component={PhotoGrid}></IndexRoute>
       </Route>
       <Route path="/:projectId" component={AppSingle}>
-        <IndexRoute component={SingleGrid}></IndexRoute>
+        <IndexRoute component={Single}></IndexRoute>
       </Route>
     </Router>
   </Provider>

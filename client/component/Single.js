@@ -1,6 +1,6 @@
 import React from 'react';
 import NameCard from './NameCard';
-import SingleGrid from './SingleGrid';
+import IndividualTasks from './IndividualTasks';
 import Header from './Header';
 
 const Single = React.createClass({
@@ -12,6 +12,9 @@ const Single = React.createClass({
         </div>
         <div className='single-grid'>
           <NameCard name='Namrata Gupta' />
+        </div>
+        <div>
+          <IndividualTasks task='Publishing View' description='Include all channel preview'/>
         </div>
       </div>
     )
