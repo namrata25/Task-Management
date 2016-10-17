@@ -11,10 +11,13 @@ const Single = React.createClass({
           <Header header={this.props.params.projectId}></Header>
         </div>
         <div className='single-grid'>
-          <NameCard name='Namrata Gupta' />
+          <NameCard member={this.props.members[1].name} />
         </div>
         <div>
-          <IndividualTasks task='Publishing View' description='Include all channel preview'/>
+          <IndividualTasks task={this.props.members[1].tasks[0].name}
+                          description={this.props.members[1].tasks[0].description}
+                          status={this.props.members[1].tasks[0].status}/>
+
         </div>
       </div>
     )
@@ -23,6 +26,4 @@ const Single = React.createClass({
 
 export default Single;
 
-/*<div>
-  {React.cloneElement(this.props.children, this.props)}
-</div>*/
+// {this.props.members.map((member, i) => <NameCard {... this.props} key={i} i={i} member={member} />)}

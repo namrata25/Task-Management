@@ -4,7 +4,8 @@ const members = [
     'tasks': [
       {
         'name': 'Publishing View',
-        'status': 'Done'
+        'status': 'Done',
+        'description': 'Include all channels preview'
       }
     ]
   },
@@ -13,11 +14,13 @@ const members = [
     'tasks': [
       {
         'name': 'Icon Creation',
-        'status': 'On Hold'
+        'status': 'On Hold',
+        'description': 'Needed a new icon set'
       },
       {
         'name': 'Publishing View',
-        'status': 'Done'
+        'status': 'Done',
+        'description': 'Include all channels preview'
       }
     ]
   },

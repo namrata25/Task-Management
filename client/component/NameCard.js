@@ -6,7 +6,7 @@ const NameCard =  React.createClass({
     return(
       <div className='vertical-line'>
         <div className='namecard'>
-          {this.props.name}
+          {this.props.member}
         </div>
       </div>
     )
@@ -14,3 +14,5 @@ const NameCard =  React.createClass({
 });
 
 export default NameCard;
+
+// {this.props.member.name}

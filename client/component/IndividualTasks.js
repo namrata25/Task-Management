@@ -7,7 +7,7 @@ const IndividualTasks = React.createClass({
         <div><b>{this.props.task}</b></div>
         <div className="dropdown">
             <button className="btn btn-default dropdown-toggle dropdown-status" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <p className='status-font'>Dropup
+              <p className='status-font'>{this.props.status}
               <span className="caret"></span></p>
             </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
