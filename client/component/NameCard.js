@@ -14,5 +14,3 @@ const NameCard =  React.createClass({
 });
 
 export default NameCard;
-
-// {this.props.member.name}
