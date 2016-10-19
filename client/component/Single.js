@@ -11,9 +11,14 @@ const Single = React.createClass({
           <NameCard member={this.props.member.name} />
         </div>
         <div>
-          <IndividualTasks task={this.props.member.tasks[0].name}
-                          description={this.props.member.tasks[0].description}
-                          status={this.props.member.tasks[0].status}/>
+          {this.props.member.tasks.map((task, i) => {
+              return (
+                <div>
+                  <IndividualTasks {... this.props} key={i} i={i} task={task}/>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     )

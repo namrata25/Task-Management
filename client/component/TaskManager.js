@@ -14,7 +14,7 @@ const TaskManager = React.createClass({
             this.props.members.map((member, i) => {
               return (
                 <div>
-                  <Single {... this.props} key={i} i={i} member={member} />
+                  <Single {... this.props} key={i} i={i} member={member}/>
                 </div>
               )
             }
