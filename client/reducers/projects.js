@@ -1,6 +1,5 @@
 function projects(state = [], action) {
   if(action.type === "ADD_PROJECT") {
-
     return [
       ...state, {
         Title: action.title,

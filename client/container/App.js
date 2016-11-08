@@ -6,7 +6,8 @@ import Task from '../component/Task';
 
 function mapStateToProps(state) {
   return {
-    projects: state.projects
+    projects: state.projects,
+    members: state.members
   }
 }
 

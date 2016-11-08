@@ -16,6 +16,7 @@ const PhotoGrid = React.createClass({
   		};
   	},
   handleOnChange (value) {
+    console.log('in hnadle on chages');
 		const { multi } = this.state;
 		if (multi) {
 			this.setState({ multiValue: value });
@@ -80,7 +81,7 @@ const PhotoGrid = React.createClass({
                   </div>
                 </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.handleSubmit}>Close</button>
               <button type="submit" className="btn btn-default" data-dismiss="modal" onClick={this.handleSubmit} hidden>Create</button>
             </div>
           </div>

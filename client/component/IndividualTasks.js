@@ -1,25 +1,30 @@
 import React from 'react';
 
 const IndividualTasks = React.createClass({
+  getInitialState() {
+    return {
+      status: this.props.task.status
+    };
+  },
+  setStatus() {
+    console.log('in setStatus function');
+    var status1 = this.refs.status.value;
+    console.log('---value', status1);
+    this.setState({status:status1});
+  },
   render() {
+    const status = this.state;
     return (
       <div className='individual-task'>
         <div><b>{this.props.task.name}</b></div>
-        <div className="dropdown">
-            <button className="btn btn-default dropdown-toggle dropdown-status"
-                    type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false" onClick={this.setStatus}>
-              <p className='status-font'>{this.props.task.status}
-              <span className="caret"></span></p>
-            </button>
-          <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <li className='status-font'><a href="#">Done</a></li>
-            <li className='status-font'><a href="#">On hold</a></li>
-            <li className='status-font'><a href="#">In Process</a></li>
-            <li className='status-font'><a href="#">Sent</a></li>
-            <li className='status-font'><a href="#">Schedule</a></li>
-          </ul>
-        </div>
+        <select className="dropdown" onChange={this.setStatus} ref='status'>
+          <option>{this.state.status}</option>
+          <option value='done'>Done</option>
+          <option value='onHold'>On Hold</option>
+          <option value='inProcess'>In Process</option>
+          <option value='sent'>Sent</option>
+          <option value='schedule'>Schedule</option>
+        </select>
         <div className='description'>{this.props.task.description}</div>
       </div>
     )
@@ -27,3 +32,7 @@ const IndividualTasks = React.createClass({
 });
 
 export default IndividualTasks;
+/*<select onChange={this.setStatus}>
+  <option value='1'>1</option>
+  <option value='2'>2</option>
+</select>*/
